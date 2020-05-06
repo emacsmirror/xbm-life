@@ -29,7 +29,7 @@ tile size, etc.) are displayed.
 Below is a list of useful keybindings for playing around.
 
 | Key bind  | Function                       |
-|-----------|--------------------------------|
+|-----------+--------------------------------|
 | l         | Load pattern                   |
 | L         | Load random pattern            |
 | g         | Reset                          |
