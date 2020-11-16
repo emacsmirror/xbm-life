@@ -7,8 +7,8 @@ XBM images.  Requires a graphical Emacs instance to run.
 
 ## Installation
 
-Install from [Marmalade] or [MELPA (Stable)] via `M-x package-install
-RET xbm-life RET`.
+Install from [MELPA (Stable)] via `M-x package-install RET xbm-life
+RET`.
 
 Alternatively download the `xbm-life.el` file, open it in Emacs and
 execute `M-x eval-buffer`.
@@ -52,5 +52,4 @@ colors used for rendering, the initial pattern and many more.
 
 [image]: img/screencast.gif
 [Conway's Game of Life]: https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life
-[Marmalade]: https://marmalade-repo.org/
 [MELPA (Stable)]: http://melpa.org/
