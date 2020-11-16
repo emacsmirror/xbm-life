@@ -399,6 +399,8 @@ When supplying SIZE, make it of that size instead
                        (xbm-life-next-cell-state grid row col))))
     new))
 
+(defvar xbm-life-image-map (make-sparse-keymap))
+
 (defun xbm-life-redraw-grid ()
   "Redraw grid on game buffer."
   (interactive)
@@ -412,6 +414,7 @@ When supplying SIZE, make it of that size instead
                              :height (* xbm-life-grid-size xbm-life-tile-size)
                              :foreground xbm-life-foreground
                              :background xbm-life-background)
+               'keymap xbm-life-image-map
                'point-entered (lambda (_old _new) (goto-char (point-max)))))
   (insert "\n")
   (deactivate-mark)
@@ -643,9 +646,8 @@ If yes, toggle the clicked cell."
          (x (car x-y))
          (y (cdr x-y))
          (row (/ y xbm-life-tile-size))
-         (col (/ x xbm-life-tile-size))
-         (size (* xbm-life-grid-size xbm-life-tile-size)))
-    (when (and (<= x size) (<= y size))
+         (col (/ x xbm-life-tile-size)))
+    (when (not (xbm-life-out-of-bounds row col))
       (xbm-life-toggle-cell row col))))
 
 (define-key xbm-life-mode-map (kbd "l") 'xbm-life-load-pattern)
@@ -663,7 +665,7 @@ If yes, toggle the clicked cell."
 (define-key xbm-life-mode-map (kbd "C--") 'xbm-life-larger-grid)
 (define-key xbm-life-mode-map (kbd "t") 'xbm-life-toggle-toroidal-grid)
 (define-key xbm-life-mode-map (kbd "i") 'xbm-life-invert-colors)
-(define-key xbm-life-mode-map (kbd "<mouse-1>") 'xbm-life-mouse-handler)
+(define-key xbm-life-image-map (kbd "<mouse-1>") 'xbm-life-mouse-handler)
 
 (defcustom xbm-life-display-stats t
   "When non-nil, display demo stats when starting a demo."
