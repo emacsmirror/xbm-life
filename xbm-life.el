@@ -5,7 +5,7 @@
 ;; Author: Vasilij Schneidermann <mail@vasilij.de>
 ;; URL: https://depp.brause.cc/xbm-life
 ;; Version: 0.1.3
-;; Package-Requires:
+;; Package-Requires: ((emacs "24.1"))
 ;; Keywords: games
 
 ;; This file is NOT part of GNU Emacs.
